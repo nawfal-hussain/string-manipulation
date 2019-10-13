@@ -1,0 +1,43 @@
+Declare str1 As String
+Declare alphabet_to_be_checked As Char
+Declare alphabet_being_checked As Char
+Declare continue_loop As Boolean
+Declare counter As Integer
+Declare counter2 As Integer
+Declare continue_second_loop As Boolean
+
+alphabet_being_checked = ''
+alphabet_to_be_checked = ''
+str1 = ""
+continue_loop = True
+continue_second_loop = True
+
+Output "enter the string you wish to test = "
+Input str1
+str1 = Lcase(str1)
+If Length(str1) < 26 Then
+    Output "that sentence cant be a pangram"
+    End
+EndIf
+For counter = 97 to 122
+    alphabet_to_be_checked = character(counter)
+    If continue_loop = True Then
+        For counter2 = 1 to Length(str1)
+            alphabet_being_checked = Mid(str1, counter2, 1)
+            If alphabet_being_checked <> alphabet_to_be_checked And continue_second_loop = True Then
+                continue_second_loop = False
+            ElseIf alphabet_being_checked = alphabet_to_be_checked Then
+                continue_second_loop = True
+                Exit For
+            EndIf
+        Next
+        If continue_second_loop = false Then
+            continue_loop = Flase
+        EndIf
+    EndIF
+Next
+If continue_loop = False then
+    Output "the sentence does not contain all the letters"
+    End
+EndIf
+Output "the sentence is a pangram"

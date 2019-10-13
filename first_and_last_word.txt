@@ -1,0 +1,25 @@
+Declare str1 As String
+Declare str2 As String
+Declare char1 As Char
+Declare char2 As Char
+Declare first_last_word As String
+Declare space_finder As Integer
+
+first_last_word = ""
+str1 = ""
+str2 = ""
+char1 = ''
+char2 = ''
+space_finder = 0
+
+Output "enter first name"
+Input str1
+Output "enter last name"
+Input str2
+
+char1 = Mid(str1, 1, 1)
+char2 = Mid(str2, 1, 1)
+
+first_last_word = char1 + " " + char2
+Output first_last_word
+
