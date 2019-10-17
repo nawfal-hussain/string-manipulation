@@ -1,0 +1,27 @@
+Declare str1 As String
+Declare str2 As String
+Declare nextChar As Char
+Declare char1 As Char
+Declare counter As Integer
+
+str1 = ""
+str2 = ""
+char1 = ''
+nextChar = ''
+counter = 0
+
+Output "enter string = "
+Input str1
+Output "enter the string to be removed = "
+Input char1
+
+For counter = 1 to Length(str1)
+    nextchar = Mid(str1, counter, 1)
+    If nextChar = char1 Then
+        nextchar = ''
+        str2 = str2 + nextchar
+    Else
+        str2 = str2 + nextchar
+    EndIf
+Next
+Output "final string is = "; str2

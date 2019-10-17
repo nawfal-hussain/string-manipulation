@@ -1,0 +1,31 @@
+declare nextchar : character 
+declare str1 : string
+declare str2 : string
+declare char1 : character
+declare char2 : character
+declare counter : integer
+
+str1 = ""
+str2 = ""
+char1 = ''
+char2 = ''
+counter = 0
+
+input"the string that needs to be changed = ", str1
+input"the char that needs to be replaced = ", char1
+input"the char that will replace it = ", char2
+
+for counter = 1 to length(str1)
+    nextchar = mid(str1, counter, 1)
+    if nextchar = char1
+      then 
+        nextchar = char2
+        str2 = str2 & nextchar
+      else
+        str2 = str2 & nextchar
+    endif
+next counter
+endfor
+output "final string is =", str2
+
+        
